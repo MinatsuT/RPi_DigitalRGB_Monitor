@@ -50,3 +50,11 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# SDCC intermediate files
+firmware/slave_sync_8.lk
+firmware/slave_sync_8.lst
+firmware/slave_sync_8.mem
+firmware/slave_sync_8.rel
+firmware/slave_sync_8.rst
+firmware/slave_sync_8.sym

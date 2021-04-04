@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.ihx": "hex",
+        "mgl_thread.h": "c",
+        "unistd.h": "c",
+        "syncdly.h": "c"
+    }
+}
