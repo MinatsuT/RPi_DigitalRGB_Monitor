@@ -52,6 +52,7 @@ Mkfile.old
 dkms.conf
 
 # SDCC intermediate files
+digital_rgb_display
 firmware/slave_sync_8.lk
 firmware/slave_sync_8.lst
 firmware/slave_sync_8.mem
