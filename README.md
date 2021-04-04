@@ -14,6 +14,7 @@ PB2 --- デジタルRGBのR
 RB4 --- デジタルRGBのH-SYnc  
 RB5 --- デジタルRGBのV-SYnc  
 GND --- デジタルRGBのGND  
+IFCLK --- デジタルRGBのColorClock(ピクセルクロック)  
 
 RDY0/SLRD    --- VCC  
 RDY1/DLWR    --- GND  

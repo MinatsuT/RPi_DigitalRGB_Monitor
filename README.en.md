@@ -16,6 +16,7 @@ EZ-USB     Digital-RGB
    RB4 --- H-SYnc  
    RB5 --- V-SYnc  
    GND --- GND
+ IFCLK --- ColorClock(PixelClock)  
 ```
 
 Inside the EZ-USB:
