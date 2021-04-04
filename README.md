@@ -11,8 +11,8 @@ Raspberry PiとEZ-USB FX2LPを使用したデジタルRGB-HDMIコンバータで
 PB0 --- デジタルRGBのB  
 PB1 --- デジタルRGBのG  
 PB2 --- デジタルRGBのR  
-RB4 --- デジタルRGBのH-SYnc  
-RB5 --- デジタルRGBのV-SYnc  
+RB3 --- デジタルRGBのH-SYnc  
+RB4 --- デジタルRGBのV-SYnc  
 GND --- デジタルRGBのGND  
 IFCLK --- デジタルRGBのColorClock(ピクセルクロック)  
 

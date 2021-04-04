@@ -13,8 +13,8 @@ EZ-USB     Digital-RGB
    PB0 --- Blue
    PB1 --- Green
    PB2 --- Red
-   RB4 --- H-SYnc  
-   RB5 --- V-SYnc  
+   RB3 --- H-SYnc  
+   RB4 --- V-SYnc  
    GND --- GND
  IFCLK --- ColorClock(PixelClock)  
 ```
