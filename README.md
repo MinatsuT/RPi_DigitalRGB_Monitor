@@ -17,7 +17,7 @@ GND --- デジタルRGBのGND
 IFCLK --- デジタルRGBのColorClock(ピクセルクロック)  
 
 RDY0/SLRD    --- VCC  
-RDY1/DLWR    --- GND  
+RDY1/SLWR    --- GND  
 PA2/SLOE     --- VCC  
 PA4/FIFOADR0 --- GND  
 PA5/FIFOADR1 --- VCC  

@@ -22,7 +22,7 @@ EZ-USB     Digital-RGB
 Inside the EZ-USB:
 ```
 RDY0/SLRD    --- VCC  
-RDY1/DLWR    --- GND  
+RDY1/SLWR    --- GND  
 PA2/SLOE     --- VCC  
 PA4/FIFOADR0 --- GND  
 PA5/FIFOADR1 --- VCC  
