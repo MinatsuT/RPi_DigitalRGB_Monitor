@@ -59,3 +59,4 @@ firmware/slave_sync_8.mem
 firmware/slave_sync_8.rel
 firmware/slave_sync_8.rst
 firmware/slave_sync_8.sym
+firmware/slave_sync_8.asm
