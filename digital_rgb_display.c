@@ -5,6 +5,8 @@
 
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
+#define DW 640
+#define DH 200
 #define MGL_IMPLEMENTATION
 #include "MGL_dispmanx.h"
 
@@ -14,18 +16,11 @@
 #include <libusb.h>
 #include <assert.h>
 
-#define DW 640
-#define DH 200
-
 #define BIT_VSYNC 4
 #define BIT_HSYNC 3
 #define BIT_R 2
 #define BIT_G 1
 #define BIT_B 0
-
-#define RGB565_R 0b1111100000000000
-#define RGB565_G 0b0000011111100000
-#define RGB565_B 0b0000000000011111
 
 // Built-in firmware hex strings.
 static char *firmware[] = {
@@ -301,8 +296,8 @@ int main(int argc, char *argv[]) {
     uint32_t vmask = 1 << BIT_VSYNC;
     uint32_t hmask = 1 << BIT_HSYNC;
     uint32_t vhmask = vmask | hmask;
-    uint16_t col[8] = {0, RGB565_B, RGB565_G, RGB565_G | RGB565_B, RGB565_R, RGB565_R | RGB565_B, RGB565_R | RGB565_G, RGB565_R | RGB565_G | RGB565_B};
-    uint16_t *p;
+    col_t col[8] = {0, WEB_RGB(0, 0, 5), WEB_RGB(5, 0, 0), WEB_RGB(5, 0, 5), WEB_RGB(0, 5, 0), WEB_RGB(0, 5, 5), WEB_RGB(5, 5, 0), WEB_RGB(5, 5, 5)};
+    col_t *p;
     while (1) {
         // Wait V-Sync
         while (READ() & vmask)

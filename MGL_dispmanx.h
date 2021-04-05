@@ -18,16 +18,14 @@
 #include "bcm_host.h"
 
 // Parameters
-#define GRP_W (640)
-#define GRP_H (200)
+#define GRP_W DW
+#define GRP_H DH
 
 // Utility macros
 //--------------------------------------------------------------------------------
 #define ZEROFILL(var) memset(&(var), 0, sizeof(var))
-
-// VRAM
-//--------------------------------------------------------------------------------
-uint16_t *vram;
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
 
 // Prototypes
 //--------------------------------------------------------------------------------
@@ -82,11 +80,15 @@ RECT_VARS_T vars;
 uint32_t screen = 0;
 VC_RECT_T src_rect;
 VC_RECT_T dst_rect;
-VC_IMAGE_TYPE_T type = VC_IMAGE_RGB565;
+VC_IMAGE_TYPE_T type = VC_IMAGE_8BPP;
 
 int width = GRP_W, height = GRP_H;
 int vram_pitch;
 int aligned_height;
+
+// VRAM
+typedef uint8_t col_t;
+col_t *vram;
 
 //================================================================================
 // Renderer
@@ -107,7 +109,7 @@ void dispmanx_vsync_callback(DISPMANX_UPDATE_HANDLE_T u, void *dat) {
 // Initializer
 //================================================================================
 int MGL_dispmanx_Init() {
-    vram_pitch = ALIGN_UP(width * 2, 32); // bytes of a line
+    vram_pitch = ALIGN_UP(width * sizeof(*vram), 32); // bytes of a line
     aligned_height = ALIGN_UP(height, 16);
 
     int ret;
@@ -176,6 +178,25 @@ int MGL_dispmanx_Init() {
     assert(ret == 0);
 
     return 0;
+}
+
+//================================================================================
+// graphics
+//================================================================================
+#define WEB_RGB(r, g, b) ((MAX(0, MIN(5, r)) * 6 + MAX(0, MIN(5, g))) * 6 + MAX(0, MIN(5, b)))
+
+void gfill(int x1, int y1, int x2, int y2, col_t c) {
+    x1 = MIN(DW - 1, MAX(0, x1));
+    x2 = MIN(DW - 1, MAX(0, x2));
+    y1 = MIN(DH - 1, MAX(0, y1));
+    y2 = MIN(DH - 1, MAX(0, y2));
+
+    for (int y = y1; y <= y2; y++) {
+        col_t *p = &vram[y * DW + x1];
+        for (int x = x1; x <= x2; x++) {
+            *p++ = c;
+        }
+    }
 }
 
 //================================================================================
