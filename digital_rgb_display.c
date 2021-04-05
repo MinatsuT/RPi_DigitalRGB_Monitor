@@ -296,7 +296,7 @@ int main(int argc, char *argv[]) {
     uint32_t vmask = 1 << BIT_VSYNC;
     uint32_t hmask = 1 << BIT_HSYNC;
     uint32_t vhmask = vmask | hmask;
-    col_t col[8] = {0, WEB_RGB(0, 0, 5), WEB_RGB(5, 0, 0), WEB_RGB(5, 0, 5), WEB_RGB(0, 5, 0), WEB_RGB(0, 5, 5), WEB_RGB(5, 5, 0), WEB_RGB(5, 5, 5)};
+    col_t col[8] = {0, WEB_RGB(0, 0, 5), WEB_RGB(0, 5, 0), WEB_RGB(0, 5, 5), WEB_RGB(5, 0, 0), WEB_RGB(5, 0, 5), WEB_RGB(5, 5, 0), WEB_RGB(5, 5, 5)};
     col_t *p;
     while (1) {
         // Wait V-Sync
