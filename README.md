@@ -40,6 +40,7 @@ $ make
 $ sudo rmmod usbtest
 ```
 5. スーパーユーザで、digital_rgb_display を実行します。
+**注**：デジタルRGBにつながったPCの電源は、プログラム起動前にONにしておいてください。これは、デジタルRGBのColorClock信号がEZ-USB FX2LPのクロックソースになっているためです。
 ```
 $ sudo ./digital_rgb_display 
 ```

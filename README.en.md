@@ -44,7 +44,8 @@ $ make
 ```
 $ sudo rmmod usbtest
 ```
-5. As a super user, run digital_rgb_display.
+5. As a super user, run digital_rgb_display.  
+**Note**: Before starting the program, the PC connected via the digital RGB should be turned ON. This is because the ColorClock of the digital RGB is used for the clock source of the EZ-USB FX2LP.
 ```
 $ sudo ./digital_rgb_display 
 ```
